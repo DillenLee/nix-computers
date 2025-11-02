@@ -19,6 +19,19 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	# GPU support, uses intel core i5-6500t so Skylake GPU
+  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "iHD"; 
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+
+	hardware.graphics = {
+		enable = true;
+    extraPackages = with pkgs; [
+      intel-ocl # Generic OpenCL support
+      intel-media-driver # For Broadwell era gpu 
+		];
+	};
+
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -63,11 +76,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-   git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

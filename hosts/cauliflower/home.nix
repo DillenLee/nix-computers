@@ -30,7 +30,6 @@
 				enable = true;
 				nix-direnv.enable = true;
 			};
-		};
 		kitty = {
 			enable = true;
 			font.name = "Hack Nerd Font";
@@ -40,8 +39,10 @@
 		};
 		git = {
 			enable = true;
-			userEmail = "dillenmylee@gmail.com";
-			userName = "Dillen Lee";
+			settings = {
+				user.email = "dillenmylee@gmail.com";
+				user.name = "Dillen Lee";
+				};
 		};
   };
 
