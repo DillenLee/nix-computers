@@ -20,7 +20,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
       {
-	nixosConfigurations.Broccoli= lib.nixosSystem {
+	nixosConfigurations.Cauliflower= lib.nixosSystem {
 	  inherit system;
 	  modules = [ ./configuration.nix ];
 	};

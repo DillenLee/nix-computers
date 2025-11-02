@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "cauliflower"; # Define your hostname.
+  networking.hostName = "Cauliflower"; # Define your hostname.
  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -49,6 +49,7 @@
   services.tailscale = {
 	  enable = true;
   };
+  services.xserver.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dillen = {

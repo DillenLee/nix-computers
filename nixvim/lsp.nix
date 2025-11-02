@@ -4,8 +4,9 @@
 
 			servers = {
 				ruff.enable = true; # Python
-				julials.enable = true; # Julia
+				# julials.enable = true; # Julia
 				clangd.enable = true; # C/C++
+				# arduino_language_server.enable = true;
 			};
 	};
 }
