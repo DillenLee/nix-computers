@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+			./network.nix
     ];
 
   # Bootloader.
@@ -32,8 +33,11 @@
 	};
 
 
-  # Enable networking
   networking.networkmanager.enable = true;
+
+	networking.firewall.checkReversePath = false; 
+	networking.wireguard.enable = true;
+	networking.firewall.allowedUDPPorts = [ 3389 51820 8920];
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -58,11 +62,14 @@
     layout = "us";
     variant = "";
   };
+
   # Enable tailscale
   services.tailscale = {
 	  enable = true;
   };
+
   services.xserver.enable = true;
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dillen = {
@@ -72,12 +79,23 @@
     packages = with pkgs; [];
   };
 
+  users.users.spielberg= {
+    isNormalUser = true;
+    description = "Jellyfin and Deluge";
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -90,13 +108,30 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+		enable = true;
+		settings.X11Forwarding = true;
+	};
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+	# Enable jellyfin
+	services.jellyfin = {
+		enable = true;
+		openFirewall = true;
+		user = "spielberg";
+		configDir = "/home/spielberg/jellyfin";
+	};
+
+	# Deluge
+	services.deluge = {
+		enable = true;
+		user = "spielberg";
+		web.enable = true;
+		web.openFirewall = true;
+		# declarative = true;
+		# config = {
+		# 	download_location = "/home/dillen/films";
+		# };
+	};
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

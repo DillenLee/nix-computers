@@ -24,6 +24,7 @@
   };
 
   programs = {
+		firefox.enable = true;
 		btop.enable = true;
 		ripgrep.enable = true;
 		direnv = {
