@@ -12,7 +12,7 @@
   # sure to first check the Home Manager release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  imports = [ ./nixvim ./sway ];
+  imports = [ ../../nixvim ./sway ];
 
   nixpkgs.config.allowUnfreePredicate = (_: true); home.packages = [
 		pkgs.cachix
