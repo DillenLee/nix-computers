@@ -51,6 +51,11 @@
 	services.tailscale = {
 		enable = true;
 	};
+	
+	services.tlp = {
+		enable = true;
+	};
+
 
   # Configure console keymap
   console.keyMap = "uk";
