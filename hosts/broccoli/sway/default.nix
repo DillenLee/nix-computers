@@ -5,6 +5,7 @@ black  = "#000000";
 white  = "#ffffff";
 orange = "#ffa742";
 grey   = "#2c2c2c";
+laptop = "eDP-1";
 in {
 wayland.windowManager.sway = {
 	enable = true;
@@ -24,6 +25,19 @@ wayland.windowManager.sway = {
 		# Use kitty as default terminal
 		terminal = "kitty"; 
 		menu = "fuzzel";
+
+		bindswitches = {
+			"lid:on" = {
+				action = "output ${laptop} disable";
+				reload = true;
+				locked = true;
+				};
+			"lid:off" = {
+				action = "output ${laptop} enable";
+				reload = true;
+				locked = true;
+				};
+			};
 
 
 		output = {
