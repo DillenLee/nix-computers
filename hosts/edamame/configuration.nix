@@ -105,17 +105,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
     ];
   };
 
-  # Install firefox.
   programs = {
-    firefox.enable = true;
-    git.enable = true;
-    
-    neovim = {
-	enable = true;
-	defaultEditor = true;
-	vimAlias = true;
-    };
-
     steam.enable = true;
   };
 
