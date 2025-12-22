@@ -14,13 +14,14 @@
 	};
 
 	outputs = { self, nixpkgs, home-manager, nixvim, ... }:
-		let
+	let
 		lib = nixpkgs.lib;
-	system = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
+		system = "x86_64-linux";
+		pkgs = nixpkgs.legacyPackages.${system};
+		hostname = "edamame";
 	in
 	{
-		nixosConfigurations.edamame = lib.nixosSystem {
+		nixosConfigurations.${hostname} = lib.nixosSystem {
 			inherit system;
 			modules = [ 
 				./configuration.nix 
