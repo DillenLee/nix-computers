@@ -14,10 +14,10 @@
 	};
 
 	outputs = { self, nixpkgs, home-manager, nixvim, ... }:
-		let
+	let
 		lib = nixpkgs.lib;
-	system = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
+		system = "x86_64-linux";
+		pkgs = nixpkgs.legacyPackages.${system};
 	in
 	{
 		nixosConfigurations.Broccoli= lib.nixosSystem {

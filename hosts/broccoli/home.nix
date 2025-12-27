@@ -27,7 +27,6 @@
 	  pkgs.xfce.thunar
 	  pkgs.xfce.thunar-volman
 	  pkgs.xarchiver
-		# pkgs.vscodium
 		pkgs.arc-theme
 		pkgs.papirus-icon-theme
 		pkgs.gnome-tweaks
@@ -107,25 +106,6 @@
 		};
 		poetry.enable = true;
 		starship.enable = true;
-		# i3blocks = {
-		# 	enable = true;
-		# 	bars = {
-		# 		bottom = {
-		# 			date = {
-		# 				command = "date +%m-%d";  
-		# 				interval = 1;
-		# 			};
-		# 			time = lib.hm.dag.entryAfter [ "date" ] {
-		# 				command = "date +%X"; 
-		# 				interval=1;
-		# 			};
-		# 			battery = lib.hm.dag.entryAfter [ "date" ] {
-		# 				command = "bash ~/.config/i3blocks/battery.sh";
-		# 				interval = 1;
-		# 			};
-		# 		};
-		# 	};
-		# };
   };
 
 

@@ -11,9 +11,9 @@
       ./cachix.nix
     ];
 
-  # Bootloader.
+  # bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.cantouchefivariables = true;
 
   #flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
