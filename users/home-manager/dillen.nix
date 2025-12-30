@@ -1,4 +1,4 @@
-{...}:
+{home-manager,...}:
 {
 	# This is the home-manager user file 
 	home-manager.useGlobalPkgs = true;

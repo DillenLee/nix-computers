@@ -1,10 +1,8 @@
 {
 	
 	imports = [
+		../../users/home-manager/dillen.nix
 		../../modules/nixvim
 	];
 
-
-# Define the user 
-	# home-manager.users.dillen = import ../../users/dillen.nix
 }

@@ -1,5 +1,5 @@
 {
-  description = "My nixos machines";
+  description = "My nixos machines and home-manager systems";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -32,15 +32,17 @@
         ];
 				specialArgs = {inherit host;};
       }; 
+
 			
 		# Function for only home-manager systems
 		mkHM = { system, host }:
-			home-manager.nixpkgs.lib.homeManagerConfiguration {
+			home-manager.lib.homeManagerConfiguration {
 
 				pkgs = nixpkgs.legacyPackages.${system};
 
 				modules = [
-					./hosts/${host}/default.nix	
+					# ./hosts/${host}/default.nix	
+					./users/home-manager/dillen.nix
 					nixvim.homeModules.nixvim
 				];
 			};
@@ -66,7 +68,7 @@
 		};
 		# Home-manager only machines
 		homeConfigurations = {
-			artichoke = mkHM {
+			dillen = mkHM {
 				system = "x86_64-linux";
 				host = "artichoke";
 			};

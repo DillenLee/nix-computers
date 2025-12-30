@@ -7,6 +7,7 @@
 				# julials.enable = true; # Julia
 				clangd.enable = true; # C/C++
 				# arduino_language_server.enable = true;
+				nixd.enable = true;
 			};
 	};
 }

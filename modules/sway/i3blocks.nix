@@ -1,4 +1,4 @@
-{lib, ...}: 
+{lib, nixpkgs, home-manager, ...}: 
 {
 	programs.i3blocks = {
 			enable = true;
