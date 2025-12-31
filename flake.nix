@@ -16,7 +16,7 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }:
   let
 		# Define a reproducible host maker 
     mkHost = { system, host }:
@@ -31,7 +31,7 @@
 					nixvim.nixosModules.nixvim
         ];
 				specialArgs = {inherit host;};
-      }; 
+      };
 			
   in {
 
