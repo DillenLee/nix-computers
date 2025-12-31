@@ -1,3 +1,4 @@
+{...}:
 {
 	programs.nixvim = {
 		 plugins.luasnip = {

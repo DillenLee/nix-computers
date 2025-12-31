@@ -1,4 +1,16 @@
+{...}:
 {
+	imports = [
+		./bufferline.nix
+			./vimtex.nix
+			./treesitter.nix
+			./comment.nix
+			./lsp.nix
+			./cmp.nix
+			./luasnip.nix
+			./remote-nvim.nix
+			./vim-css-color.nix
+	];
 	programs.nixvim = {
 		enable = true;
 		defaultEditor = true;
@@ -38,17 +50,12 @@
 		# colourscheme
 		colorschemes.nightfox.enable = true;
 
+#	plugins = {
+#		bufferline.enable = true;
+#		bufferline.autoLoad = true;
+#		web-devicons.enable = true;
+#	};
+
 # import all the plugins
-		imports = [
-			./bufferline.nix
-			./vimtex.nix
-			./treesitter.nix
-			./comment.nix
-			./lsp.nix
-			./cmp.nix
-			./luasnip.nix
-			./remote-nvim.nix
-			./vim-css-color.nix
-		];
 	};
 }

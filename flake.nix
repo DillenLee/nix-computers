@@ -16,7 +16,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, ... }:
   let
 		# Define a reproducible host maker 
     mkHost = { system, host }:
@@ -32,20 +32,7 @@
         ];
 				specialArgs = {inherit host;};
       }; 
-
 			
-		# Function for only home-manager systems
-		mkHM = { system, host }:
-			home-manager.lib.homeManagerConfiguration {
-
-				pkgs = nixpkgs.legacyPackages.${system};
-
-				modules = [
-					# ./hosts/${host}/default.nix	
-					./users/home-manager/dillen.nix
-					nixvim.homeModules.nixvim
-				];
-			};
   in {
 
 		# nixos machines
@@ -66,11 +53,14 @@
 				host = "edamame";
 			}; 
 		};
+
 		# Home-manager only machines
 		homeConfigurations = {
-			dillen = mkHM {
-				system = "x86_64-linux";
-				host = "artichoke";
+			artichoke = import ./modules/mkHome.nix {
+        inherit inputs;
+        system = "x86_64-linux";
+				username = "dillen";
+        host = "artichoke";
 			};
 		};
 	};
