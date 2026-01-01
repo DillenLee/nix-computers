@@ -10,6 +10,7 @@
 			./luasnip.nix
 			./remote-nvim.nix
 			./vim-css-color.nix
+			./vimwiki.nix
 	];
 	programs.nixvim = {
 		enable = true;
@@ -48,14 +49,7 @@
 		];
 
 		# colourscheme
-		colorschemes.nightfox.enable = true;
+		colorschemes.onedark.enable = true;
 
-#	plugins = {
-#		bufferline.enable = true;
-#		bufferline.autoLoad = true;
-#		web-devicons.enable = true;
-#	};
-
-# import all the plugins
 	};
 }
