@@ -10,7 +10,8 @@
 			./luasnip.nix
 			./remote-nvim.nix
 			./vim-css-color.nix
-			./vimwiki.nix
+			./nvim-suround.nix
+			# ./vimwiki.nix
 	];
 	programs.nixvim = {
 		enable = true;
@@ -29,22 +30,23 @@
 		};  
 
 # Autocmd
+# Not good
 		autoCmd = [
-			{
-				event = "FileType";
-				pattern = "cpp";
-				command = "map <buffer> <F2> :w<CR> :! g++ %<CR> :term <CR>";
-			}
-			{
-				event = "FileType";
-				pattern = "python";
-				command = "map <buffer> <F2> :w<CR> :exec '!python' shellescape(@%, 1)<CR>";
-			}
-			{
-				event = "FileType";
-				pattern = "nix";
-				command = "map <buffer> <F2> :w<CR> :! home-manager switch --flake .<CR>";
-				}
+			# {
+			# 	event = "FileType";
+			# 	pattern = "cpp";
+			# 	command = "map <buffer> <F2> :w<CR> :! g++ %<CR> :term <CR>";
+			# }
+			# {
+			# 	event = "FileType";
+			# 	pattern = "python";
+			# 	command = "map <buffer> <F2> :w<CR> :exec '!python' shellescape(@%, 1)<CR>";
+			# }
+			# {
+			# 	event = "FileType";
+			# 	pattern = "nix";
+			# 	command = "map <buffer> <F2> :w<CR> :! home-manager switch --flake .<CR>";
+			# 	}
 
 		];
 
