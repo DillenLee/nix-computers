@@ -9,8 +9,10 @@
 			./cmp.nix
 			./luasnip.nix
 			./remote-nvim.nix
+			./obsidian.nix
 			./vim-css-color.nix
 			./nvim-suround.nix
+			./telescope.nix
 			# ./vimwiki.nix
 	];
 	programs.nixvim = {
