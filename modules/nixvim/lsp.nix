@@ -4,14 +4,27 @@
 		lsp = {
 				enable = true;
 
+				inlayHints.enable = true;
+
 				keymaps = [
 					{
 						key = "gd";
 						lspBufAction = "definition";
 					}
 					{
-						key = "gD";
+						key = "gr";
 						lspBufAction = "references";
+					}
+					{
+						key = "K";
+						lspBufAction = "hover";
+					}
+					{
+						action = {
+							__raw =
+							"function() vim.diagnostic.open_float() end";
+							};
+						key = "gs";
 					}
 					{
 						action = {
@@ -20,6 +33,7 @@
 							};
 						key = "gd";
 					}
+
 				];
 				
 				servers = {
