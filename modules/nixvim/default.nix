@@ -13,6 +13,7 @@
 			./vim-css-color.nix
 			./nvim-suround.nix
 			./telescope.nix
+			./zotcite.nix
 			# ./vimwiki.nix
 	];
 	programs.nixvim = {

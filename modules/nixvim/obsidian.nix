@@ -15,7 +15,7 @@
 				{
 					event = "FileType";
 					pattern = "markdown";
-					command = ":noremap <Leader>n :Obsidian new<CR>";
+					command = ":noremap <C-N> :Obsidian new<CR>";
 				}
 				{
 					event = "FileType";
@@ -66,45 +66,53 @@
 				
 				frontmatter = { 
 						func = {__raw = ''
-						function(note)
-						-- Add the title of the note as an alias.
-						if note.title then
-							note:add_alias(note.title)
-						end
+							function(note)
+								local title = note.title or ""
 
-						local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-
-						-- `note.metadata` contains any manually added fields in the frontmatter.
-						-- So here we just make sure those fields are kept in the frontmatter.
-							if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-								for k, v in pairs(note.metadata) do
-									out[k] = v
-								end
+								return {
+									id = note.id,
+									title = title,
+									aliases = title ~= "" and { title } or {},
+									created = os.date("%Y-%m-%d %H:%M"),
+								}
 							end
-
-							return out
-						end
 					'';
 					};
 
 
 				};
-
-				note_id_func = { 
-				__raw = ''
-					function(title)
-						local suffix = ""
-						if title ~= nil then
-								suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-						else
-								for _ = 1, 4 do
-									suffix = suffix .. string.char(math.random(65, 90))
-									end
+				note_id_func = {
+					__raw = ''
+						function(title)
+							suffix = ""
+							for _ = 1, 4 do
+								suffix = suffix .. string.char(math.random(65, 90))
+							end
+							title = os.date("%Y%m%d") .. "-" .. suffix 
+							return title
 						end
-						return suffix
-					end
-				'';
+					'';
 				};
+
+				# note_id_func = { 
+				# __raw = ''
+				# 	function(title)
+				# 		local suffix = ""
+				# 		note.title = 
+				# 				for _ = 1, 4 do
+				# 					suffix = suffix .. string.char(math.random(65, 90))
+				# 					end
+				# 		end
+				# 		return suffix
+				# 	end
+				# '';
+				# }; 
+				# note_id_func = {
+				# 	__raw = ''
+				# 		return require("obsidian.builtin").zettel_id;
+				# 	'';
+				# };
+
 			};
 
 		};
