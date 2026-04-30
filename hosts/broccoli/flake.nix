@@ -17,12 +17,28 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+			overlay = (final: prev: {
+					kicad6 = import (fetchTarball {
+							url = "https://github.com/NixOS/nixpkgs/archive/nixos-22.11.tar.gz";
+							}) {
+					system = prev.system;
+					}.kicad;
+					});
+      # pkgs = nixpkgs.legacyPackages.${system};
+			pkgs = import nixpkgs {
+				inherit system;
+				overlays = [ overlay ];
+				};
     in
       {
 	nixosConfigurations.Broccoli= lib.nixosSystem {
 	  inherit system;
-	  modules = [ ./configuration.nix ];
+		modules = [
+			({ ... }: {
+			 nixpkgs.overlays = [ overlay ];
+			 environment.systemPackages = [ pkgs.kicad6 ];
+			 })
+			];
 	};
 
       homeConfigurations = {
