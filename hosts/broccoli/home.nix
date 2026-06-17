@@ -18,7 +18,7 @@
 		pkgs.cachix
     pkgs.obsidian
     pkgs.zotero
-    pkgs.neofetch
+    pkgs.fastfetch
 	  pkgs.inkscape
 	  pkgs.nerd-fonts.hack
 	  pkgs.nerd-fonts.iosevka
@@ -46,7 +46,11 @@
   };
 
   programs = {
-		firefox.enable = true;
+		firefox = {
+			enable = true;
+			configPath = "${config.xdg.configHome}/mozilla/firefox";
+			};
+
 		btop.enable = true;
 		ripgrep.enable = true;
 		zathura.enable = true;
@@ -76,8 +80,13 @@
 		git = {
 			enable = true;
 			lfs.enable = true;
-			userEmail = "dillen.lee20@imperial.ac.uk";
-			userName = "Dillen Lee";
+			settings = 
+				{
+					user = {
+						email = "dillen.lee20@imperial.ac.uk";
+						name = "Dillen Lee";
+					};
+				};
 		};
 		fuzzel = {
 			enable = true;

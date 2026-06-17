@@ -54,6 +54,10 @@
 	
 	services.tlp = {
 		enable = true;
+		settings = {
+			STOP_CHARGE_THRESH_BAT0 = 80; 
+			START_CHARGE_THRESH_BAT0 = 70; 
+		};
 	};
 
 
@@ -113,6 +117,10 @@
 		fish.enable = true;
 	};
 
+	# Incomplete! mount common properly
+	# fileSystems."/common/" = {
+	# 		device = 
+	# };
 
 	
 	services.avahi = {
