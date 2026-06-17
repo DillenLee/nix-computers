@@ -116,6 +116,7 @@ wayland.windowManager.sway = {
 imports = [
 	./i3blocks.nix
 	./swaylock.nix
+	./monitors.nix
 ];
 }
 
