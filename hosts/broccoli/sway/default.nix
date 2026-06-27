@@ -99,8 +99,8 @@ wayland.windowManager.sway = {
 		
 		bars = [{
 			fonts = {
-				names = ["Nerd"];
-				style = "italic";
+				names = ["Hack Nerd Font"];
+				style = "regular";
 				size  = 15.0;
 			};
 			colors = {
