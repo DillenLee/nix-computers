@@ -27,8 +27,6 @@
 	  pkgs.thunar
 	  pkgs.thunar-volman
 	  pkgs.xarchiver
-		# pkgs.vscodium
-		pkgs.arc-theme
 		pkgs.papirus-icon-theme
 		pkgs.gnome-tweaks
 		pkgs.acpi
@@ -143,8 +141,23 @@
 
 
 	gtk = {
-		enable = true;
-		theme.name = "Arc-Dark";
+		gtk4 = {
+			enable = true;
+			theme = "Arc-Dark";
+			cursorTheme = {
+				name = "Arc-Dark";  	
+			};
+		};
+		gtk3 = {
+			enable = true;
+			theme = "Arc-Dark";
+		};
+		gtk2 = {
+			enable = true;
+			theme = "Arc-Dark";
+		};
+		theme.package = pkgs.arc-theme;
+
 	};
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
