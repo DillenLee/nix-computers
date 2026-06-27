@@ -24,8 +24,8 @@
 	  pkgs.nerd-fonts.iosevka
 	  pkgs.libertine
 	  pkgs.wl-clipboard
-	  pkgs.xfce.thunar
-	  pkgs.xfce.thunar-volman
+	  pkgs.thunar
+	  pkgs.thunar-volman
 	  pkgs.xarchiver
 		# pkgs.vscodium
 		pkgs.arc-theme
