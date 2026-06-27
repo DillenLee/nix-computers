@@ -137,6 +137,12 @@
 		# };
   };
 
+	xdg.mimeApps = {
+		enable = true;
+		defaultApplications = {
+			"inode/directory" = "thunar.desktop"; # Replace with your preferred app's .desktop file
+		};
+	};
 
 	wayland.windowManager.sway = {
 		enable = true;
