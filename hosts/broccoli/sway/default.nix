@@ -109,6 +109,8 @@ wayland.windowManager.sway = {
 			statusCommand = "i3blocks -c ~/.config/i3blocks/bottom";
 
 		}];
+	
+		defaultWorkspace = "workspace number 1";
 
 	};
 };
