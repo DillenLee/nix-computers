@@ -14,7 +14,6 @@ wayland.windowManager.sway = {
 	exec swayidle -w \
 		timeout 600 'pkexec brillo -O && pkexec brillo -q -S 0 -u 5000000' \
 			 resume 'pkexec brillo -I' \
-		timeout 605 'brightnessctl -q s 0' \
 		timeout 660 'swaylock -f' \
 		timeout 1200 'playerctl -a pause && systemctl suspend' \
 		before-sleep 'swaylock -f && playerctl -a pause'
