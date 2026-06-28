@@ -12,7 +12,7 @@
 						command = "date +%X"; 
 						interval=1;
 					};
-					battery = lib.hm.dag.entryAfter [ "date" ] {
+					battery = lib.hm.dag.entryAfter [ "time" ] {
 						command = "bash ~/.config/i3blocks/battery.sh";
 						interval = 1;
 					};
