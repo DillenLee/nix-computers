@@ -76,6 +76,9 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+	
+	# Automatic garbage collection
+	nix.gc.automatic = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
