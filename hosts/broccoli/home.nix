@@ -75,6 +75,17 @@
 			themeFile = "Doom_One";
 			shellIntegration.enableFishIntegration = true;
 		};
+
+		gnome-terminal = {
+			enable = true;
+			themeVariant = "dark";
+			profile."32e8afb7-ea20-4a8c-ae3e-1c20165c8601" = {
+				font = "Hack Nerd Font Mono 15";
+				visibleName = "dillen";
+				default = true;
+				};
+			};
+
 		git = {
 			enable = true;
 			lfs.enable = true;

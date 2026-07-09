@@ -43,10 +43,20 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
+
+	services.xserver = {
+
+		enable = true;
+
+		windowManager.openbox.enable = true;
+		displayManager.lightdm.enable = true;
+
+		xkb = {
+			layout = "gb";
+			variant = "";
+		};
+
+	};
 
 	services.tailscale = {
 		enable = true;
