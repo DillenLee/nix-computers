@@ -10,6 +10,14 @@
 				VRR_OFF = [
 					"eDP-1"
 				];
+				
+				ORDER = [
+					"eDP-1"
+					"Dell U2713HM"
+					"HP P27h G4"
+				];
+				
+				ARRANGE = "ROW";
 
 			};
 	};
