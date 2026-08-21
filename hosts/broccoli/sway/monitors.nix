@@ -9,14 +9,16 @@
 # a custom solution
 				VRR_OFF = [
 					"eDP-1"
+					"VG245"
+					"HP E24 G5"
 				];
 				
 				ORDER = [
 					"eDP-1"
 					"Dell U2713HM"
 					"HP P27h G4"
-					"CN43493B1Q"
-					"HALMQS019659"
+					"VG245"
+					"HP E24 G5"
 				];
 				
 				ARRANGE = "ROW";
