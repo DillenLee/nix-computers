@@ -78,7 +78,7 @@
   users.users.dillen = {
     isNormalUser = true;
     description = "Dillen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     packages = with pkgs; [];
   };
 
