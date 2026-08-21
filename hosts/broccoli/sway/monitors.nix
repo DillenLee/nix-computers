@@ -15,6 +15,8 @@
 					"eDP-1"
 					"Dell U2713HM"
 					"HP P27h G4"
+					"CN43493B1Q"
+					"HALMQS019659"
 				];
 				
 				ARRANGE = "ROW";

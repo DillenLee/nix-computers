@@ -128,6 +128,7 @@
 		};
 		gnome-disks.enable = true;
 		fish.enable = true;
+		steam.enable = true;
 	};
 
 	# Incomplete! mount common properly
