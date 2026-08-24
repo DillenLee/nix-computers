@@ -4,6 +4,6 @@
 		enable = true;
 		extensions = [
 		  "nix"
-		]
+		];
 	};
 }
