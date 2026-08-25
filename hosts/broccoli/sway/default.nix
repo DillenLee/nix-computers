@@ -56,6 +56,9 @@ wayland.windowManager.sway = {
 			"type:keyboard" = {
 				xkb_options = "caps:escape";
 			};
+			"1386:890:Wacom_One_by_Wacom_S_Pen" = {
+				map_to_output = "HP E24 G5";
+			};
 		};
 		
 		colors = {
