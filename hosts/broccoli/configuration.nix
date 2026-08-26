@@ -62,6 +62,9 @@
 		enable = true;
 	};
 	
+	# recommended on nixos wiki
+	services.thermald.enable = true;
+
 	services.tlp = {
 		enable = true;
 		settings = {
