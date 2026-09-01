@@ -140,12 +140,17 @@
 	# };
 
 	
-	services.avahi = {
-	};
-
   hardware.graphics.enable = true;
 
-	security.polkit.enable = true;
+
+	security = {
+		polkit.enable = true;
+
+		pam.services = {
+			greetd.enableGnomeKeyring = true;
+			login.enableGnomeKeyring = true;
+		};
+	};
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
