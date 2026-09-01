@@ -132,6 +132,7 @@
 		gnome-disks.enable = true;
 		fish.enable = true;
 		steam.enable = true;
+		nix-ld.enable = true; # Useful for Zed
 	};
 
 	# Incomplete! mount common properly
