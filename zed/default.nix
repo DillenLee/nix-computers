@@ -6,5 +6,9 @@
 		  "nix"
 			"julia"
 		];
+		userSettings = {
+			vim_mode = true;
+		};
+	
 	};
 }
