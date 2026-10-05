@@ -8,6 +8,11 @@
 			settings = {
 				view_method = "zathura";
 				compiler_method = "latexmk";
+				quickfix_ignore_filters =
+					[
+					 "Underfull \\\\hbox"
+					 "Overfull \\\\hbox"
+					];
 			};
 		};
 		
