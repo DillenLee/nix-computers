@@ -52,7 +52,14 @@
 		btop.enable = true;
 		ripgrep.enable = true;
 		zathura.enable = true;
-		ranger.enable = true;
+		ranger = {
+			enable = true;
+			settings = {
+				preview_images = true;
+				preview_images_method = "kitty";
+			};
+		};
+		
 		wofi.enable = true;
 		swayimg.enable = true;
 		direnv = {
