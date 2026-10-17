@@ -50,6 +50,10 @@
 			};
 
 		btop.enable = true;
+		zoxide = {
+			enable = true;
+			enableFishIntegration = true;
+		};
 		ripgrep.enable = true;
 		zathura.enable = true;
 		ranger = {
