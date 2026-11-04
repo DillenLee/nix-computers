@@ -58,5 +58,6 @@ programs.nixvim = {
 		./luasnip.nix
 		./remote-nvim.nix
 		./telescope.nix
+		./neogen.nix
   ];
 }
