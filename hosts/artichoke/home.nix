@@ -12,14 +12,11 @@
   # sure to first check the Home Manager release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  imports = [ ./nixvim ];
+  imports = [ ../../nixvim ];
 
   nixpkgs.config.allowUnfreePredicate = (_: true); home.packages = [
     pkgs.obsidian
 		pkgs.vscodium
-		pkgs.zotero
-		pkgs.neofetch
-		pkgs.nerdfonts
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage plain files is through 'home.file'.
@@ -28,7 +25,7 @@
 
   programs = {
   
-		firefox.enable = true;
+		firefox.enable = false;
 		btop.enable = true;
 # thunderbird.enable = true;
 		texlive.enable = true;
